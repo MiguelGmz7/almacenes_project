@@ -1,11 +1,3 @@
-
-# # for dataset in dir(datasets):
-# #     print(dataset)
-
-# iris = datasets.load_iris()
-# iris.keys()
-# print(iris.DESCR)
-
 # importamos pandas para poder leer el dataset
 import pandas as pd
 file_path = "BankOfAmericaCredits.csv"
@@ -27,6 +19,48 @@ method = GaussianNB()
 
 method.fit(x_train,y_train)
 
+
+Ethnicity = ['asiatico', 'negro', 'latino', 'otro', 'blanco']
+Industry = ['comunicacion','entretenimiento','agropecuario','educacion','energia','finanzas','salud','industrial','tecnologia','materiales',
+            'bienes raices','investigacion','transporte','gobierno']
+# gender = input("Ingresa tu genero: ")
+# income = input("Ingresa tu ingreso mensual: ")
+# creditscore = input("Ingresa tu puntaje de credito: ")
+# bankcostumer = input("cliente: ")
+# industria = input("industria: ")
+# etnia = input("etnia ")
+# trabajo = input("ingresa tus años trabajados ")
+# credito = input("ya tenias un credito: ")
+# empleado = input("eres empleado: ")
+# deuda = input("deuda: ")
+# licencia = input("licencia: ")
+# edad = input("edad: ")
+# ciudadano = input("eres ciudadano: ")
+
+#Crear un diccionario con los datos
+data = {
+    'Gender': [1],
+    'Income': [0],
+    'CreditScore': [0],
+    'BankCustomer': [0],
+    'Industry': [1],
+    'Ethnicity': [0.25],
+    'YearsEmployed': [10.000],
+    'PriorDefault': [1],
+    'Employed': [0],
+    'Debt': [2.250],
+    'DriversLicense': [1],
+    'Age': [40.92],
+    'Citizen': [0]
+}
+
+#Crear el DataFrame
+client = pd.DataFrame(data)
+print(client)
+
+pred = method.predict(client)
+print(pred)
+
 #predecimos las clases de estos datos
 y_pred = method.predict(x_test)
 
@@ -42,8 +76,5 @@ from sklearn.metrics import precision_score
 pres = precision_score(y_test,y_pred)
 print("precision del modelo")
 print(pres)
-
-
-
 
 
