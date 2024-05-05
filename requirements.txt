@@ -1,0 +1,2 @@
+pip install numpy scipy matplotlib ipython pandas
+pip install scikit-learn
