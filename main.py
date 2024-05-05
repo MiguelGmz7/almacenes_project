@@ -30,10 +30,20 @@ method.fit(x_train,y_train)
 #predecimos las clases de estos datos
 y_pred = method.predict(x_test)
 
+
 from sklearn.metrics import confusion_matrix
 
 matriz = confusion_matrix(y_test,y_pred)
+print("Matriz de confunsion")
 print(matriz)
+
+# tenemos una precision del modelo
+from sklearn.metrics import precision_score
+pres = precision_score(y_test,y_pred)
+print("precision del modelo")
+print(pres)
+
+
 
 
 
