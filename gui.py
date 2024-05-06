@@ -20,6 +20,10 @@ def relative_to_assets(path: str) -> Path:
 
 window = Tk()
 
+# importamos pandas para poder leer el dataset
+import pandas as pd
+file_path = "BankOfAmericaCredits.csv"
+df = pd.read_csv(file_path)
 def bayes():
     # Obtenemos los valores
     gender = entry_1.get()
@@ -36,10 +40,7 @@ def bayes():
     ethnicity = entry_12.get()
     years_employed = entry_13.get()
     
-    # importamos pandas para poder leer el dataset
-    import pandas as pd
-    file_path = "BankOfAmericaCredits.csv"
-    df = pd.read_csv(file_path)
+    
 
     # definimos una variable "target" (x es el resto de las columnas, "y" la variable que queremos conocer)
     target = "Approved"
@@ -84,7 +85,19 @@ def bayes():
         messagebox.showinfo("Felicidades", "Su credito fue APROBADO")
     else:
         messagebox.showinfo("Lo sentimos", "Su credito fue RECHAZADO")
-        
+    
+    # creamos el grafico 
+    # import matplotlib.pyplot as plt
+    # sns.countplot(x='Approved', data=df)
+    # plt.show()
+    
+
+
+def del_entry():
+    entries = [entry_1, entry_2, entry_3, entry_4, entry_5, entry_6, entry_7, entry_8, entry_9, entry_10, entry_11, entry_12, entry_13] 
+    
+    for entry in entries:
+        entry.delete(0, 'end')
 
 window.geometry("774x702")
 window.configure(bg = "#FFFFFF")
@@ -124,6 +137,18 @@ image_3 = canvas.create_image(
     357.6100158691406,
     image=image_image_3
 )
+
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import seaborn as sns
+
+fig = Figure(figsize=(4.5, 4.4), dpi=100, facecolor=("#0073CF"))
+plot = fig.add_subplot(1, 1, 1)
+sns.countplot(x='Approved', data=df, ax=plot)
+
+canvasf = FigureCanvasTkAgg(fig, master=window)  # A 'master' is the parent widget.
+canvasf.draw()
+canvasf.get_tk_widget().place(x=261, y=136)
 
 canvas.create_text(
     27.74017333984375,
@@ -524,7 +549,7 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_2 clicked"),
+    command=del_entry, #invocamos la funcion de del_entry
     relief="flat"
 )
 button_2.place(
