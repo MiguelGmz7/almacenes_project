@@ -7,7 +7,7 @@ from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, messagebox
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -21,7 +21,7 @@ def relative_to_assets(path: str) -> Path:
 window = Tk()
 
 def bayes():
-    # Get the values from the entry fieldsGender = entry_1.get()
+    # Obtenemos los valores
     gender = entry_1.get()
     Income = entry_2.get()
     employee = entry_3.get()
@@ -35,8 +35,56 @@ def bayes():
     bank_customer = entry_11.get()
     ethnicity = entry_12.get()
     years_employed = entry_13.get()
-    # imprime todos estos datos
-    print(gender,Income,credit_score,bank_customer,industry,ethnicity,years_employed,prior_default,employee,debt,driver,age,citizen)
+    
+    # importamos pandas para poder leer el dataset
+    import pandas as pd
+    file_path = "BankOfAmericaCredits.csv"
+    df = pd.read_csv(file_path)
+
+    # definimos una variable "target" (x es el resto de las columnas, "y" la variable que queremos conocer)
+    target = "Approved"
+    x = df.drop(target, axis=1)
+    y = df[target]
+
+    # seleccionamos nuestros conjuntos de entrenamiento y prueba 
+    from sklearn.model_selection import train_test_split
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
+
+    # creamos un algoritmo
+    from sklearn.naive_bayes import GaussianNB
+    method = GaussianNB()
+
+    # entrenamos el modelo
+    method.fit(x_train,y_train)
+
+    # creamos un data frame
+    data = {
+    'Gender': [gender],
+    'Income': [Income],
+    'CreditScore': [credit_score],
+    'BankCustomer': [bank_customer],
+    'Industry': [industry],
+    'Ethnicity': [ethnicity],
+    'YearsEmployed': [years_employed],
+    'PriorDefault': [prior_default],
+    'Employed': [employee],
+    'Debt': [debt],
+    'DriversLicense': [driver],
+    'Age': [age],
+    'Citizen': [citizen]
+    }
+
+    #Crear el DataFrame
+    client = pd.DataFrame(data)
+
+    #predice el resultado
+    pred = method.predict(client)
+
+    if pred[0] == 1:
+        messagebox.showinfo("Felicidades", "Su credito fue APROBADO")
+    else:
+        messagebox.showinfo("Lo sentimos", "Su credito fue RECHAZADO")
+        
 
 window.geometry("774x702")
 window.configure(bg = "#FFFFFF")
@@ -460,7 +508,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=bayes,
+    command=bayes, #invocamos la funcion de bayes
     relief="flat"
 )
 button_1.place(
