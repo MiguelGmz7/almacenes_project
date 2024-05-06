@@ -46,8 +46,8 @@ image_1 = canvas.create_image(
 image_image_2 = PhotoImage(
     file=relative_to_assets("image_2.png"))
 image_2 = canvas.create_image(
-    119.36865234375,
-    356.39532470703125,
+    120.0,
+    396.972412109375,
     image=image_image_2
 )
 
@@ -118,8 +118,8 @@ entry_2.place(
 )
 
 canvas.create_text(
-    29.02960205078125,
-    388.20013427734375,
+    30.2894287109375,
+    472.6804504394531,
     anchor="nw",
     text="Empleado",
     fill="#FFFFFF",
@@ -127,8 +127,8 @@ canvas.create_text(
 )
 
 canvas.create_text(
-    27.8912353515625,
-    428.04473876953125,
+    29.15106201171875,
+    512.5250244140625,
     anchor="nw",
     text="Deudas",
     fill="#FFFFFF",
@@ -136,8 +136,8 @@ canvas.create_text(
 )
 
 canvas.create_text(
-    27.74017333984375,
-    467.22418212890625,
+    29.0,
+    551.7044677734375,
     anchor="nw",
     text="Licencia de conducir",
     fill="#FFFFFF",
@@ -145,8 +145,8 @@ canvas.create_text(
 )
 
 canvas.create_text(
-    29.02960205078125,
-    507.1646728515625,
+    30.2894287109375,
+    591.64501953125,
     anchor="nw",
     text="Edad",
     fill="#FFFFFF",
@@ -154,8 +154,8 @@ canvas.create_text(
 )
 
 canvas.create_text(
-    27.74017333984375,
-    547.843994140625,
+    29.0,
+    632.3243408203125,
     anchor="nw",
     text="Ciudadano",
     fill="#FFFFFF",
@@ -165,8 +165,8 @@ canvas.create_text(
 entry_image_3 = PhotoImage(
     file=relative_to_assets("entry_3.png"))
 entry_bg_3 = canvas.create_image(
-    120.38753509521484,
-    417.7989959716797,
+    121.6473617553711,
+    502.27931213378906,
     image=entry_image_3
 )
 entry_3 = Entry(
@@ -176,8 +176,8 @@ entry_3 = Entry(
     highlightthickness=0
 )
 entry_3.place(
-    x=42.12137198448181,
-    y=409.830078125,
+    x=43.38119864463806,
+    y=494.3103942871094,
     width=156.53232622146606,
     height=13.937835693359375
 )
@@ -185,8 +185,8 @@ entry_3.place(
 entry_image_4 = PhotoImage(
     file=relative_to_assets("entry_4.png"))
 entry_bg_4 = canvas.create_image(
-    120.38753509521484,
-    456.22053813934326,
+    121.6473617553711,
+    540.7008543014526,
     image=entry_image_4
 )
 entry_4 = Entry(
@@ -196,8 +196,8 @@ entry_4 = Entry(
     highlightthickness=0
 )
 entry_4.place(
-    x=42.12137198448181,
-    y=448.5362243652344,
+    x=43.38119864463806,
+    y=533.0165405273438,
     width=156.53232622146606,
     height=13.368627548217773
 )
@@ -205,8 +205,8 @@ entry_4.place(
 entry_image_5 = PhotoImage(
     file=relative_to_assets("entry_5.png"))
 entry_bg_5 = canvas.create_image(
-    120.95674896240234,
-    496.06514263153076,
+    122.2165756225586,
+    580.5455198287964,
     image=entry_image_5
 )
 entry_5 = Entry(
@@ -216,8 +216,8 @@ entry_5 = Entry(
     highlightthickness=0
 )
 entry_5.place(
-    x=42.69058585166931,
-    y=488.3808288574219,
+    x=43.95041251182556,
+    y=572.8612060546875,
     width=156.53232622146606,
     height=13.368627548217773
 )
@@ -225,8 +225,8 @@ entry_5.place(
 entry_image_6 = PhotoImage(
     file=relative_to_assets("entry_6.png"))
 entry_bg_6 = canvas.create_image(
-    120.38753509521484,
-    537.9019622802734,
+    121.6473617553711,
+    622.3822479248047,
     image=entry_image_6
 )
 entry_6 = Entry(
@@ -236,8 +236,8 @@ entry_6 = Entry(
     highlightthickness=0
 )
 entry_6.place(
-    x=42.12137198448181,
-    y=529.9330444335938,
+    x=43.38119864463806,
+    y=614.413330078125,
     width=156.53232622146606,
     height=13.937835693359375
 )
@@ -245,8 +245,8 @@ entry_6.place(
 entry_image_7 = PhotoImage(
     file=relative_to_assets("entry_7.png"))
 entry_bg_7 = canvas.create_image(
-    120.38753509521484,
-    574.6158933639526,
+    121.6473617553711,
+    660.0961790084839,
     image=entry_image_7
 )
 entry_7 = Entry(
@@ -256,10 +256,68 @@ entry_7 = Entry(
     highlightthickness=0
 )
 entry_7.place(
-    x=42.12137198448181,
-    y=566.9315795898438,
+    x=43.38119864463806,
+    y=652.411865234375,
     width=156.53232622146606,
     height=13.368627548217773
+)
+
+canvas.create_text(
+    29.0,
+    433.6804504394531,
+    anchor="nw",
+    text="Credito anterior",
+    fill="#FFFFFF",
+    font=("Lato Bold", 17 * -1)
+)
+
+entry_image_8 = PhotoImage(
+    file=relative_to_assets("entry_8.png"))
+entry_bg_8 = canvas.create_image(
+    121.6473617553711,
+    461.45234966278076,
+    image=entry_image_8
+)
+entry_8 = Entry(
+    bd=0,
+    bg="#FFFCFC",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_8.place(
+    x=43.38119864463806,
+    y=453.7680358886719,
+    width=156.53232622146606,
+    height=13.368627548217773
+)
+
+canvas.create_text(
+    29.0,
+    301.972412109375,
+    anchor="nw",
+    text="Industria",
+    fill="#FFFFFF",
+    font=("Lato Bold", 17 * -1)
+)
+
+entry_image_9 = PhotoImage(
+    file=relative_to_assets("entry_9.png"))
+entry_bg_9 = canvas.create_image(
+    123.0,
+    331.472412109375,
+    image=entry_image_9
+)
+entry_9 = Entry(
+    bd=0,
+    bg="#FFFCFC",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_9.place(
+    x=45.84604239463806,
+    y=323.972412109375,
+    width=154.30791521072388,
+    height=13.0
 )
 
 canvas.create_text(
@@ -271,20 +329,20 @@ canvas.create_text(
     font=("Lato Bold", 17 * -1)
 )
 
-entry_image_8 = PhotoImage(
-    file=relative_to_assets("entry_8.png"))
-entry_bg_8 = canvas.create_image(
+entry_image_10 = PhotoImage(
+    file=relative_to_assets("entry_10.png"))
+entry_bg_10 = canvas.create_image(
     120.38753509521484,
     245.044207572937,
-    image=entry_image_8
+    image=entry_image_10
 )
-entry_8 = Entry(
+entry_10 = Entry(
     bd=0,
     bg="#FFFCFC",
     fg="#000716",
     highlightthickness=0
 )
-entry_8.place(
+entry_10.place(
     x=42.12137198448181,
     y=237.35989379882812,
     width=156.53232622146606,
@@ -300,69 +358,11 @@ canvas.create_text(
     font=("Lato Bold", 17 * -1)
 )
 
-entry_image_9 = PhotoImage(
-    file=relative_to_assets("entry_9.png"))
-entry_bg_9 = canvas.create_image(
-    121.24142456054688,
-    289.7270965576172,
-    image=entry_image_9
-)
-entry_9 = Entry(
-    bd=0,
-    bg="#FFFCFC",
-    fg="#000716",
-    highlightthickness=0
-)
-entry_9.place(
-    x=43.82907462120056,
-    y=281.7581787109375,
-    width=154.82469987869263,
-    height=13.937835693359375
-)
-
-canvas.create_text(
-    29.02960205078125,
-    301.6804504394531,
-    anchor="nw",
-    text="Etnia",
-    fill="#FFFFFF",
-    font=("Lato Bold", 17 * -1)
-)
-
-canvas.create_text(
-    27.74017333984375,
-    346.7279052734375,
-    anchor="nw",
-    text="Años Trabajando",
-    fill="#FFFFFF",
-    font=("Lato Bold", 17 * -1)
-)
-
-entry_image_10 = PhotoImage(
-    file=relative_to_assets("entry_10.png"))
-entry_bg_10 = canvas.create_image(
-    121.24142456054688,
-    331.27928161621094,
-    image=entry_image_10
-)
-entry_10 = Entry(
-    bd=0,
-    bg="#FFFCFC",
-    fg="#000716",
-    highlightthickness=0
-)
-entry_10.place(
-    x=43.82907462120056,
-    y=323.31036376953125,
-    width=154.82469987869263,
-    height=13.937835693359375
-)
-
 entry_image_11 = PhotoImage(
     file=relative_to_assets("entry_11.png"))
 entry_bg_11 = canvas.create_image(
-    120.38753509521484,
-    375.9621458053589,
+    121.24142456054688,
+    289.7270965576172,
     image=entry_image_11
 )
 entry_11 = Entry(
@@ -372,8 +372,66 @@ entry_11 = Entry(
     highlightthickness=0
 )
 entry_11.place(
-    x=42.12137198448181,
-    y=368.27783203125,
+    x=43.82907462120056,
+    y=281.7581787109375,
+    width=154.82469987869263,
+    height=13.937835693359375
+)
+
+canvas.create_text(
+    28.0,
+    345.972412109375,
+    anchor="nw",
+    text="Etnia",
+    fill="#FFFFFF",
+    font=("Lato Bold", 17 * -1)
+)
+
+canvas.create_text(
+    29.0,
+    391.972412109375,
+    anchor="nw",
+    text="Años Trabajando",
+    fill="#FFFFFF",
+    font=("Lato Bold", 17 * -1)
+)
+
+entry_image_12 = PhotoImage(
+    file=relative_to_assets("entry_12.png"))
+entry_bg_12 = canvas.create_image(
+    120.21182250976562,
+    375.5712432861328,
+    image=entry_image_12
+)
+entry_12 = Entry(
+    bd=0,
+    bg="#FFFCFC",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_12.place(
+    x=42.79947257041931,
+    y=367.6023254394531,
+    width=154.82469987869263,
+    height=13.937835693359375
+)
+
+entry_image_13 = PhotoImage(
+    file=relative_to_assets("entry_13.png"))
+entry_bg_13 = canvas.create_image(
+    121.6473617553711,
+    421.2066526412964,
+    image=entry_image_13
+)
+entry_13 = Entry(
+    bd=0,
+    bg="#FFFCFC",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_13.place(
+    x=43.38119864463806,
+    y=413.5223388671875,
     width=156.53232622146606,
     height=13.368627548217773
 )
@@ -388,8 +446,8 @@ button_1 = Button(
     relief="flat"
 )
 button_1.place(
-    x=96.0,
-    y=617.972412109375,
+    x=256.0,
+    y=615.972412109375,
     width=211.74554443359375,
     height=63.41462326049805
 )
@@ -404,8 +462,8 @@ button_2 = Button(
     relief="flat"
 )
 button_2.place(
-    x=482.54248046875,
-    y=617.972412109375,
+    x=511.0,
+    y=615.972412109375,
     width=217.45480346679688,
     height=64.0
 )
