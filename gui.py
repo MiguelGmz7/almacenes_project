@@ -20,6 +20,24 @@ def relative_to_assets(path: str) -> Path:
 
 window = Tk()
 
+def bayes():
+    # Get the values from the entry fieldsGender = entry_1.get()
+    gender = entry_1.get()
+    Income = entry_2.get()
+    employee = entry_3.get()
+    debt = entry_4.get()
+    driver = entry_5.get()
+    age = entry_6.get()
+    citizen = entry_7.get()
+    prior_default = entry_8.get()
+    industry = entry_9.get()
+    credit_score = entry_10.get()
+    bank_customer = entry_11.get()
+    ethnicity = entry_12.get()
+    years_employed = entry_13.get()
+    # imprime todos estos datos
+    print(gender,Income,credit_score,bank_customer,industry,ethnicity,years_employed,prior_default,employee,debt,driver,age,citizen)
+
 window.geometry("774x702")
 window.configure(bg = "#FFFFFF")
 
@@ -442,7 +460,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
+    command=bayes,
     relief="flat"
 )
 button_1.place(
