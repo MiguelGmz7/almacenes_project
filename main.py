@@ -16,7 +16,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
 from sklearn.naive_bayes import GaussianNB
 method = GaussianNB()
 
-
+# entrenamos el modelo
 method.fit(x_train,y_train)
 
 
@@ -64,6 +64,10 @@ print(pred)
 #predecimos las clases de estos datos
 y_pred = method.predict(x_test)
 
+if pred[0] == 1:
+    print("es 1!!!!!!")
+else:
+    print("es 0!!!!!!")
 
 from sklearn.metrics import confusion_matrix
 
