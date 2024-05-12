@@ -1,0 +1,47 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+	"name": "Bank_of_america_devcontainer",
+	"build": {
+		// Sets the run context to one level up instead of the .devcontainer folder.
+		"context": "..",
+		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+		"dockerfile": "../dockerfile"
+	},
+	"features": { //list of features that our devcontainer will have
+		"ghcr.io/devcontainers/features/conda:1": {}, //library for data science in python 
+		"ghcr.io/devcontainers/features/python:1": {}, //install python
+		"ghcr.io/akhildevelops/devcontainer-features/pip:0": {}, //it let us install more libraries 
+		"ghcr.io/devcontainers/features/desktop-lite:1": {} // allow us to create a virtual desktop
+	},
+	"forwardPorts": [6080, 5901], //ports where docker and user are going to use 
+	"portsAttributes": {
+		"6080": { //Port that a user need to connect to be able to see the information 
+			"label": "Desktop (Web)"
+		},
+		"5901": { //Port where docker is going to connect with our computer 
+			"label": "Desktop (VNC)"
+		}
+	},
+	"postCreateCommand": "pip install -r requirements.txt" //este comando se realizara despues de crear el devcontainer
+	
+	//-----------------------------------------------------------------------------------------------------------------
+	// "mounts": [
+	// 	"source=D:\\User\\Courses\\Almacenes de datos\\Todo lo relacionado al proyecto/Proyecto/almacenes_project,target=/workspaces/almacenes_project,type=bind"
+	// ]
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Uncomment the next line to run commands after the container is created.
+	// "postCreateCommand": "cat /etc/os-release",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "devcontainer"
+}
