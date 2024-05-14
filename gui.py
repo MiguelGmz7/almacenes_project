@@ -8,10 +8,11 @@ from pathlib import Path
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, messagebox
+from tkinter import ttk # it allow us to create combobox
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"/workspaces/almacenes_project/assets/frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"D:\User\Courses\Almacenes de datos\Todo lo relacionado al proyecto\Proyecto\almacenes_project\assets\frame0")
 # tenemos que buscar el path donde esta el frame0
 
 def relative_to_assets(path: str) -> Path:
@@ -94,8 +95,9 @@ def bayes():
 
 
 def del_entry():
-    entries = [entry_1, entry_2, entry_3, entry_4, entry_5, entry_6, entry_7, entry_8, entry_9, entry_10, entry_11, entry_12, entry_13] 
-    
+    entries = [entry_2, entry_3, entry_4, entry_5, entry_6, entry_7, entry_8, entry_9, entry_10, entry_11, entry_12, entry_13] 
+    #falta entry_1
+
     for entry in entries:
         entry.delete(0, 'end')
 
@@ -159,25 +161,36 @@ canvas.create_text(
     font=("Lato Bold", 17 * -1)
 )
 
-entry_image_1 = PhotoImage(
-    file=relative_to_assets("entry_1.png"))
-entry_bg_1 = canvas.create_image(
-    120.38753509521484,
-    161.08596801757812,
-    image=entry_image_1
-)
-entry_1 = Entry(
-    bd=0,
-    bg="#FFFCFC",
-    fg="#000716",
-    highlightthickness=0
+# entry_image_1 = PhotoImage(
+#     file=relative_to_assets("entry_1.png"))
+# entry_bg_1 = canvas.create_image(
+#     120.38753509521484,
+#     161.08596801757812,
+#     image=entry_image_1
+# )
+# entry_1 = Entry(
+#     bd=0,
+#     bg="#FFFCFC",
+#     fg="#000716",
+#     highlightthickness=0
+# )
+# entry_1.place(
+#     x=42.12137198448181,
+#     y=153.11705017089844,
+#     width=156.53232622146606,
+#     height=13.937835693359375
+# )
+entry_1 = ttk.Combobox(
+    canvas,
+    values=("","Hombre","Mujer"),
 )
 entry_1.place(
     x=42.12137198448181,
     y=153.11705017089844,
     width=156.53232622146606,
-    height=13.937835693359375
+    height=18.937835693359375
 )
+entry_1.current(0)
 
 canvas.create_text(
     27.74017333984375,
