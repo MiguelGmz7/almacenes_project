@@ -8,6 +8,7 @@ from pathlib import Path
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, messagebox
+from tkinter import ttk # it allow us to create combobox
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -94,8 +95,9 @@ def bayes():
 
 
 def del_entry():
-    entries = [entry_1, entry_2, entry_3, entry_4, entry_5, entry_6, entry_7, entry_8, entry_9, entry_10, entry_11, entry_12, entry_13] 
-    
+    entries = [entry_2, entry_3, entry_4, entry_5, entry_6, entry_7, entry_8, entry_9, entry_10, entry_11, entry_12, entry_13] 
+    #falta entry_1
+
     for entry in entries:
         entry.delete(0, 'end')
 
@@ -159,25 +161,36 @@ canvas.create_text(
     font=("Lato Bold", 17 * -1)
 )
 
-entry_image_1 = PhotoImage(
-    file=relative_to_assets("entry_1.png"))
-entry_bg_1 = canvas.create_image(
-    120.38753509521484,
-    161.08596801757812,
-    image=entry_image_1
-)
-entry_1 = Entry(
-    bd=0,
-    bg="#FFFCFC",
-    fg="#000716",
-    highlightthickness=0
+# entry_image_1 = PhotoImage(
+#     file=relative_to_assets("entry_1.png"))
+# entry_bg_1 = canvas.create_image(
+#     120.38753509521484,
+#     161.08596801757812,
+#     image=entry_image_1
+# )
+# entry_1 = Entry(
+#     bd=0,
+#     bg="#FFFCFC",
+#     fg="#000716",
+#     highlightthickness=0
+# )
+# entry_1.place(
+#     x=42.12137198448181,
+#     y=153.11705017089844,
+#     width=156.53232622146606,
+#     height=13.937835693359375
+# )
+entry_1 = ttk.Combobox(
+    canvas,
+    values=("","Hombre","Mujer"),
 )
 entry_1.place(
     x=42.12137198448181,
     y=153.11705017089844,
     width=156.53232622146606,
-    height=13.937835693359375
+    height=18.937835693359375
 )
+entry_1.current(0)
 
 canvas.create_text(
     27.74017333984375,
@@ -253,25 +266,37 @@ canvas.create_text(
     font=("Lato Bold", 17 * -1)
 )
 
-entry_image_3 = PhotoImage(
-    file=relative_to_assets("entry_3.png"))
-entry_bg_3 = canvas.create_image(
-    121.6473617553711,
-    502.27931213378906,
-    image=entry_image_3
-)
-entry_3 = Entry(
-    bd=0,
-    bg="#FFFCFC",
-    fg="#000716",
-    highlightthickness=0
+# entry_image_3 = PhotoImage(
+#     file=relative_to_assets("entry_3.png"))
+# entry_bg_3 = canvas.create_image(
+#     121.6473617553711,
+#     502.27931213378906,
+#     image=entry_image_3
+# )
+# entry_3 = Entry(
+#     bd=0,
+#     bg="#FFFCFC",
+#     fg="#000716",
+#     highlightthickness=0
+# )
+# entry_3.place(
+#     x=43.38119864463806,
+#     y=494.3103942871094,
+#     width=156.53232622146606,
+#     height=13.937835693359375
+# )
+entry_3 = ttk.Combobox(
+    canvas,
+    values=("","Si","No"),
 )
 entry_3.place(
     x=43.38119864463806,
     y=494.3103942871094,
     width=156.53232622146606,
-    height=13.937835693359375
+    height=18.937835693359375
 )
+entry_3.current(0)
+
 
 entry_image_4 = PhotoImage(
     file=relative_to_assets("entry_4.png"))
@@ -293,25 +318,37 @@ entry_4.place(
     height=13.368627548217773
 )
 
-entry_image_5 = PhotoImage(
-    file=relative_to_assets("entry_5.png"))
-entry_bg_5 = canvas.create_image(
-    122.2165756225586,
-    580.5455198287964,
-    image=entry_image_5
-)
-entry_5 = Entry(
-    bd=0,
-    bg="#FFFCFC",
-    fg="#000716",
-    highlightthickness=0
+# entry_image_5 = PhotoImage(
+#     file=relative_to_assets("entry_5.png"))
+# entry_bg_5 = canvas.create_image(
+#     122.2165756225586,
+#     580.5455198287964,
+#     image=entry_image_5
+# )
+# entry_5 = Entry(
+#     bd=0,
+#     bg="#FFFCFC",
+#     fg="#000716",
+#     highlightthickness=0
+# )
+# entry_5.place(
+#     x=43.95041251182556,
+#     y=572.8612060546875,
+#     width=156.53232622146606,
+#     height=13.368627548217773
+# )
+
+entry_5 = ttk.Combobox(
+    canvas,
+    values=("","Si","No"),
 )
 entry_5.place(
     x=43.95041251182556,
     y=572.8612060546875,
     width=156.53232622146606,
-    height=13.368627548217773
+    height=18.937835693359375
 )
+entry_5.current(0)
 
 entry_image_6 = PhotoImage(
     file=relative_to_assets("entry_6.png"))
@@ -333,25 +370,37 @@ entry_6.place(
     height=13.937835693359375
 )
 
-entry_image_7 = PhotoImage(
-    file=relative_to_assets("entry_7.png"))
-entry_bg_7 = canvas.create_image(
-    121.6473617553711,
-    660.0961790084839,
-    image=entry_image_7
-)
-entry_7 = Entry(
-    bd=0,
-    bg="#FFFCFC",
-    fg="#000716",
-    highlightthickness=0
+# entry_image_7 = PhotoImage(
+#     file=relative_to_assets("entry_7.png"))
+# entry_bg_7 = canvas.create_image(
+#     121.6473617553711,
+#     660.0961790084839,
+#     image=entry_image_7
+# )
+# entry_7 = Entry(
+#     bd=0,
+#     bg="#FFFCFC",
+#     fg="#000716",
+#     highlightthickness=0
+# )
+# entry_7.place(
+#     x=43.38119864463806,
+#     y=652.411865234375,
+#     width=156.53232622146606,
+#     height=13.368627548217773
+# )
+
+entry_7 = ttk.Combobox(
+    canvas,
+    values=("","Si","No"),
 )
 entry_7.place(
     x=43.38119864463806,
     y=652.411865234375,
     width=156.53232622146606,
-    height=13.368627548217773
+    height=18.937835693359375
 )
+entry_7.current(0)
 
 canvas.create_text(
     29.0,
@@ -362,25 +411,37 @@ canvas.create_text(
     font=("Lato Bold", 17 * -1)
 )
 
-entry_image_8 = PhotoImage(
-    file=relative_to_assets("entry_8.png"))
-entry_bg_8 = canvas.create_image(
-    121.6473617553711,
-    461.45234966278076,
-    image=entry_image_8
-)
-entry_8 = Entry(
-    bd=0,
-    bg="#FFFCFC",
-    fg="#000716",
-    highlightthickness=0
+entry_8 = ttk.Combobox(
+    canvas,
+    values=("","Si","No"),
 )
 entry_8.place(
     x=43.38119864463806,
     y=453.7680358886719,
     width=156.53232622146606,
-    height=13.368627548217773
+    height=18.937835693359375
 )
+entry_8.current(0)
+
+# entry_image_8 = PhotoImage(
+#     file=relative_to_assets("entry_8.png"))
+# entry_bg_8 = canvas.create_image(
+#     121.6473617553711,
+#     461.45234966278076,
+#     image=entry_image_8
+# )
+# entry_8 = Entry(
+#     bd=0,
+#     bg="#FFFCFC",
+#     fg="#000716",
+#     highlightthickness=0
+# )
+# entry_8.place(
+#     x=43.38119864463806,
+#     y=453.7680358886719,
+#     width=156.53232622146606,
+#     height=13.368627548217773
+# )
 
 canvas.create_text(
     29.0,
@@ -391,25 +452,38 @@ canvas.create_text(
     font=("Lato Bold", 17 * -1)
 )
 
-entry_image_9 = PhotoImage(
-    file=relative_to_assets("entry_9.png"))
-entry_bg_9 = canvas.create_image(
-    123.0,
-    331.472412109375,
-    image=entry_image_9
-)
-entry_9 = Entry(
-    bd=0,
-    bg="#FFFCFC",
-    fg="#000716",
-    highlightthickness=0
+# entry_image_9 = PhotoImage(
+#     file=relative_to_assets("entry_9.png"))
+# entry_bg_9 = canvas.create_image(
+#     123.0,
+#     331.472412109375,
+#     image=entry_image_9
+# )
+# entry_9 = Entry(
+#     bd=0,
+#     bg="#FFFCFC",
+#     fg="#000716",
+#     highlightthickness=0
+# )
+# entry_9.place(
+#     x=45.84604239463806,
+#     y=323.972412109375,
+#     width=154.30791521072388,
+#     height=13.0
+#)
+
+entry_9 = ttk.Combobox(
+    canvas,
+    values=("",'comunicacion','entretenimiento','agropecuario','educacion','energia','finanzas','salud','industrial','tecnologia','materiales',
+            'bienes raices','investigacion','transporte','gobierno'),
 )
 entry_9.place(
     x=45.84604239463806,
     y=323.972412109375,
-    width=154.30791521072388,
-    height=13.0
+    width=156.53232622146606,
+    height=18.937835693359375
 )
+entry_9.current(0)
 
 canvas.create_text(
     28.6070556640625,
@@ -449,25 +523,37 @@ canvas.create_text(
     font=("Lato Bold", 17 * -1)
 )
 
-entry_image_11 = PhotoImage(
-    file=relative_to_assets("entry_11.png"))
-entry_bg_11 = canvas.create_image(
-    121.24142456054688,
-    289.7270965576172,
-    image=entry_image_11
-)
-entry_11 = Entry(
-    bd=0,
-    bg="#FFFCFC",
-    fg="#000716",
-    highlightthickness=0
+# entry_image_11 = PhotoImage(
+#     file=relative_to_assets("entry_11.png"))
+# entry_bg_11 = canvas.create_image(
+#     121.24142456054688,
+#     289.7270965576172,
+#     image=entry_image_11
+# )
+# entry_11 = Entry(
+#     bd=0,
+#     bg="#FFFCFC",
+#     fg="#000716",
+#     highlightthickness=0
+# )
+# entry_11.place(
+#     x=43.82907462120056,
+#     y=281.7581787109375,
+#     width=154.82469987869263,
+#     height=13.937835693359375
+# )
+
+entry_11 = ttk.Combobox(
+    canvas,
+    values=("","Si","No"),
 )
 entry_11.place(
-    x=43.82907462120056,
-    y=281.7581787109375,
-    width=154.82469987869263,
-    height=13.937835693359375
+   x=43.82907462120056,
+   y=281.7581787109375,
+    width=156.53232622146606,
+    height=18.937835693359375
 )
+entry_11.current(0)
 
 canvas.create_text(
     28.0,
@@ -487,25 +573,38 @@ canvas.create_text(
     font=("Lato Bold", 17 * -1)
 )
 
-entry_image_12 = PhotoImage(
-    file=relative_to_assets("entry_12.png"))
-entry_bg_12 = canvas.create_image(
-    120.21182250976562,
-    375.5712432861328,
-    image=entry_image_12
-)
-entry_12 = Entry(
-    bd=0,
-    bg="#FFFCFC",
-    fg="#000716",
-    highlightthickness=0
+# entry_image_12 = PhotoImage(
+#     file=relative_to_assets("entry_12.png"))
+# entry_bg_12 = canvas.create_image(
+#     120.21182250976562,
+#     375.5712432861328,
+#     image=entry_image_12
+# )
+# entry_12 = Entry(
+#     bd=0,
+#     bg="#FFFCFC",
+#     fg="#000716",
+#     highlightthickness=0
+# )
+# entry_12.place(
+#     x=42.79947257041931,
+#     y=367.6023254394531,
+#     width=154.82469987869263,
+#     height=13.937835693359375
+# )
+
+entry_12 = ttk.Combobox(
+    canvas,
+    values=("",'asiatico', 'negro', 'latino', 'otro', 'blanco'
+            ),
 )
 entry_12.place(
     x=42.79947257041931,
     y=367.6023254394531,
-    width=154.82469987869263,
-    height=13.937835693359375
+    width=156.53232622146606,
+    height=18.937835693359375
 )
+entry_12.current(0)
 
 entry_image_13 = PhotoImage(
     file=relative_to_assets("entry_13.png"))
