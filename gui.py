@@ -12,7 +12,7 @@ from tkinter import ttk # it allow us to create combobox
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"D:\User\Courses\Almacenes de datos\Todo lo relacionado al proyecto\Proyecto\almacenes_project\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"/workspaces/almacenes_project/assets/frame0")
 # tenemos que buscar el path donde esta el frame0
 
 def relative_to_assets(path: str) -> Path:
