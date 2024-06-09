@@ -20,12 +20,13 @@ def relative_to_assets(path: str) -> Path:
 
 window = Tk()
 
-# importamos pandas para poder leer el dataset
+# we import pandas to be able to read the dataset 
 import pandas as pd
 file_path = "BankOfAmericaCredits.csv"
 df = pd.read_csv(file_path)
 def bayes():
-    # Obtenemos los valores
+
+    # we get the variabels 
     gender = entry_1.get()
     Income = entry_2.get()
     employee = entry_3.get()
@@ -42,12 +43,13 @@ def bayes():
     
     
 
-    # definimos una variable "target" (x es el resto de las columnas, "y" la variable que queremos conocer)
+    # we define the variable "target (x will be the columns and y the variable that we need to know)"
     target = "Approved"
     x = df.drop(target, axis=1)
     y = df[target]
 
-    # seleccionamos nuestros conjuntos de entrenamiento y prueba 
+    # seleccionamos nuestros conjuntos de entrenamiento y prueba
+     
     from sklearn.model_selection import train_test_split
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
 
@@ -82,27 +84,28 @@ def bayes():
     pred = method.predict(client)
 
     if pred[0] == 1:
-        messagebox.showinfo("Felicidades", "Su credito fue APROBADO")
+        messagebox.showinfo("Congratulation", "Su credito fue APROBADO")
     else:
-        messagebox.showinfo("Lo sentimos", "Su credito fue RECHAZADO")
-    
-    # creamos el grafico 
-    # import matplotlib.pyplot as plt
-    # sns.countplot(x='Approved', data=df)
-    # plt.show()
+        messagebox.showinfo("Sorry", "Su credito fue RECHAZADO")
+
+    # new_row = {pred,data}
+
+    # #df = df.append(new_row,ignore_index=True)
+
     
 
-
+# function link to the delete button 
 def del_entry():
     entries = [entry_1, entry_2, entry_3, entry_4, entry_5, entry_6, entry_7, entry_8, entry_9, entry_10, entry_11, entry_12, entry_13] 
     
     for entry in entries:
         entry.delete(0, 'end')
 
+# now, we create the UI
 window.geometry("774x702")
 window.configure(bg = "#FFFFFF")
 
-
+# we create the main canvas, where we will put all the elements 
 canvas = Canvas(
     window,
     bg = "#FFFFFF",
@@ -112,8 +115,10 @@ canvas = Canvas(
     highlightthickness = 0,
     relief = "ridge"
 )
+canvas.place(x = 0, y = 0) # we place the canvas in the window
 
-canvas.place(x = 0, y = 0)
+
+# image of the bank of america logo 
 image_image_1 = PhotoImage(
     file=relative_to_assets("image_1.png"))
 image_1 = canvas.create_image(
@@ -122,6 +127,8 @@ image_1 = canvas.create_image(
     image=image_image_1
 )
 
+
+# red bar where we will put the fields 
 image_image_2 = PhotoImage(
     file=relative_to_assets("image_2.png"))
 image_2 = canvas.create_image(
@@ -130,6 +137,8 @@ image_2 = canvas.create_image(
     image=image_image_2
 )
 
+
+# blue square where the chart will be
 image_image_3 = PhotoImage(
     file=relative_to_assets("image_3.png"))
 image_3 = canvas.create_image(
@@ -138,11 +147,13 @@ image_3 = canvas.create_image(
     image=image_image_3
 )
 
-from matplotlib.figure import Figure
+
+# we import the data visualization libraries
+from matplotlib.figure import Figure  
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import seaborn as sns
 
-fig = Figure(figsize=(4.5, 4.4), dpi=100, facecolor=("#0073CF"))
+fig = Figure(figsize=(4.5, 4.4), dpi=100, facecolor=("#0073CF")) 
 plot = fig.add_subplot(1, 1, 1)
 sns.countplot(x='Approved', data=df, ax=plot)
 
@@ -154,7 +165,7 @@ canvas.create_text(
     27.74017333984375,
     131.7417755126953,
     anchor="nw",
-    text="Género",
+    text="Gender",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
@@ -183,7 +194,7 @@ canvas.create_text(
     27.74017333984375,
     169.8844757080078,
     anchor="nw",
-    text="Ingreso",
+    text="Income",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
@@ -212,7 +223,7 @@ canvas.create_text(
     30.2894287109375,
     472.6804504394531,
     anchor="nw",
-    text="Empleado",
+    text="Employed",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
@@ -221,7 +232,7 @@ canvas.create_text(
     29.15106201171875,
     512.5250244140625,
     anchor="nw",
-    text="Deudas",
+    text="Debt",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
@@ -230,7 +241,7 @@ canvas.create_text(
     29.0,
     551.7044677734375,
     anchor="nw",
-    text="Licencia de conducir",
+    text="Drivers License",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
@@ -239,7 +250,7 @@ canvas.create_text(
     30.2894287109375,
     591.64501953125,
     anchor="nw",
-    text="Edad",
+    text="Age",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
@@ -248,7 +259,7 @@ canvas.create_text(
     29.0,
     632.3243408203125,
     anchor="nw",
-    text="Ciudadano",
+    text="Citizen",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
@@ -357,7 +368,7 @@ canvas.create_text(
     29.0,
     433.6804504394531,
     anchor="nw",
-    text="Credito anterior",
+    text="Prior Credit",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
@@ -386,7 +397,7 @@ canvas.create_text(
     29.0,
     301.972412109375,
     anchor="nw",
-    text="Industria",
+    text="Industry",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
@@ -415,7 +426,7 @@ canvas.create_text(
     28.6070556640625,
     214.96221923828125,
     anchor="nw",
-    text="Puntaje de Credito",
+    text="Credit Score",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
@@ -444,7 +455,7 @@ canvas.create_text(
     29.02960205078125,
     260.12823486328125,
     anchor="nw",
-    text="Cliente",
+    text="Client",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
@@ -473,7 +484,7 @@ canvas.create_text(
     28.0,
     345.972412109375,
     anchor="nw",
-    text="Etnia",
+    text="Ethnicity",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
@@ -482,7 +493,7 @@ canvas.create_text(
     29.0,
     391.972412109375,
     anchor="nw",
-    text="Años Trabajando",
+    text="Years Employed",
     fill="#FFFFFF",
     font=("Lato Bold", 17 * -1)
 )
